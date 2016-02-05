@@ -6,7 +6,7 @@
 	//#define SWOPRINT 12
 
 	/*used to enable the sd card code in the main loop for data acquisition*/
-	//#define SDCARD 13
+	#define SDCARD 13
 
 
 

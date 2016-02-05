@@ -537,44 +537,14 @@
           <GroupName>TM_Libraries</GroupName>
           <Files>
             <File>
-              <FileName>tm_stm32f4_stdio.c</FileName>
+              <FileName>tm_stm32f4_delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.c</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.c</FilePath>
             </File>
             <File>
-              <FileName>tm_stm32f4_stdio.h</FileName>
+              <FileName>tm_stm32f4_delay.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_spi.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_gpio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_fatfs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_fatfs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.h</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.h</FilePath>
             </File>
             <File>
               <FileName>tm_stm32f4_exti.c</FileName>
@@ -587,9 +557,44 @@
               <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_exti.h</FilePath>
             </File>
             <File>
-              <FileName>tm_stm32f4_delay.c</FileName>
+              <FileName>tm_stm32f4_fatfs.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.c</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_fatfs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_spi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_stdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_stdio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.h</FilePath>
             </File>
             <File>
               <FileName>tm_stm32f4_swo.c</FileName>
@@ -1240,44 +1245,14 @@
           <GroupName>TM_Libraries</GroupName>
           <Files>
             <File>
-              <FileName>tm_stm32f4_stdio.c</FileName>
+              <FileName>tm_stm32f4_delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.c</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.c</FilePath>
             </File>
             <File>
-              <FileName>tm_stm32f4_stdio.h</FileName>
+              <FileName>tm_stm32f4_delay.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_spi.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_gpio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_fatfs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_fatfs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.h</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.h</FilePath>
             </File>
             <File>
               <FileName>tm_stm32f4_exti.c</FileName>
@@ -1290,9 +1265,44 @@
               <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_exti.h</FilePath>
             </File>
             <File>
-              <FileName>tm_stm32f4_delay.c</FileName>
+              <FileName>tm_stm32f4_fatfs.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.c</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_fatfs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_spi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_stdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_stdio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.h</FilePath>
             </File>
             <File>
               <FileName>tm_stm32f4_swo.c</FileName>
@@ -1943,44 +1953,14 @@
           <GroupName>TM_Libraries</GroupName>
           <Files>
             <File>
-              <FileName>tm_stm32f4_stdio.c</FileName>
+              <FileName>tm_stm32f4_delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.c</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.c</FilePath>
             </File>
             <File>
-              <FileName>tm_stm32f4_stdio.h</FileName>
+              <FileName>tm_stm32f4_delay.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_spi.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_gpio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_fatfs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_fatfs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.h</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.h</FilePath>
             </File>
             <File>
               <FileName>tm_stm32f4_exti.c</FileName>
@@ -1993,9 +1973,44 @@
               <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_exti.h</FilePath>
             </File>
             <File>
-              <FileName>tm_stm32f4_delay.c</FileName>
+              <FileName>tm_stm32f4_fatfs.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.c</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_fatfs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_spi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_stdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_stdio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.h</FilePath>
             </File>
             <File>
               <FileName>tm_stm32f4_swo.c</FileName>
@@ -2646,44 +2661,14 @@
           <GroupName>TM_Libraries</GroupName>
           <Files>
             <File>
-              <FileName>tm_stm32f4_stdio.c</FileName>
+              <FileName>tm_stm32f4_delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.c</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.c</FilePath>
             </File>
             <File>
-              <FileName>tm_stm32f4_stdio.h</FileName>
+              <FileName>tm_stm32f4_delay.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_spi.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_gpio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_fatfs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_fatfs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.h</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.h</FilePath>
             </File>
             <File>
               <FileName>tm_stm32f4_exti.c</FileName>
@@ -2696,9 +2681,44 @@
               <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_exti.h</FilePath>
             </File>
             <File>
-              <FileName>tm_stm32f4_delay.c</FileName>
+              <FileName>tm_stm32f4_fatfs.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.c</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_fatfs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_spi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_stdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_stdio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.h</FilePath>
             </File>
             <File>
               <FileName>tm_stm32f4_swo.c</FileName>
@@ -3349,44 +3369,14 @@
           <GroupName>TM_Libraries</GroupName>
           <Files>
             <File>
-              <FileName>tm_stm32f4_stdio.c</FileName>
+              <FileName>tm_stm32f4_delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.c</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.c</FilePath>
             </File>
             <File>
-              <FileName>tm_stm32f4_stdio.h</FileName>
+              <FileName>tm_stm32f4_delay.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_spi.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_gpio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_fatfs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>tm_stm32f4_fatfs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.h</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.h</FilePath>
             </File>
             <File>
               <FileName>tm_stm32f4_exti.c</FileName>
@@ -3399,9 +3389,44 @@
               <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_exti.h</FilePath>
             </File>
             <File>
-              <FileName>tm_stm32f4_delay.c</FileName>
+              <FileName>tm_stm32f4_fatfs.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_delay.c</FilePath>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_fatfs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_fatfs.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_spi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_spi.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_stdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm_stm32f4_stdio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Libraries\TM_Libraries\tm_stm32f4_stdio.h</FilePath>
             </File>
             <File>
               <FileName>tm_stm32f4_swo.c</FileName>
