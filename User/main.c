@@ -19,7 +19,7 @@ the programme stops recording data. This value can be changed by means of a exte
 uint8_t Sdmounted = 1;
 
 /* Used as a bufer when converting accelerometer data to string*/
-char buffer[40];
+char buffer[80];
 char filename[20];
 uint8_t fileNum = 0;
 #endif
@@ -28,7 +28,7 @@ int main(void)
 	{
 		uint32_t DelayFreq = 50; 	// This delay is set from the wanted/requied delay time of 20e-3 seconds
 		uint32_t PastCountVal;		// Stores the counter value at the start of each while loop. Used for preciese timeing
-		int16_t acc_data[3];
+		int16_t acc_data[3], angle_rate[3];
 		uint8_t Acc_id, gyro_id, Compass_id;
 		
 		
@@ -77,6 +77,9 @@ int main(void)
 			{	
 				PastCountVal = TIM_GetCounter(TIM2);
 				ADXL345_data(I2C1, acc_data);
+				
+				// Note the values returned from this function are in degrees per second. So they need to be converted after 
+				Gyro_data_raw(I2C1, angle_rate);
 
 				#ifdef SWOPRINT
 				TM_SWO_Printf("x-axis value is:  %d\n", acc_data[0]);
@@ -87,14 +90,13 @@ int main(void)
 				#ifdef SDCARD
 				if(Sdmounted)
 					{
-						sprintf(buffer, "x-axis: %4d, y-axis: %4d, z-axis: %4d \n", acc_data[0], acc_data[1], acc_data[2]);
+						sprintf(buffer, "acc_x:\t%d\tacc_y:\t%d\tacc_z:\t%d\tgyro_x:\t%d\tgyro_y:\t%d\tgyro_z:\t%d\n", acc_data[0], acc_data[1], acc_data[2], angle_rate[0],angle_rate[1],angle_rate[2]);
 						f_puts(buffer, &fil);
 					}
 				#endif
 				EnsureSetRuntime(&ConstantDelayStruct,PastCountVal, DelayFreq);
 			}
 }
-
 
 
 #ifdef SDCARD
@@ -110,7 +112,7 @@ void TM_EXTI_Handler(uint16_t GPIO_Pin)
 						LedOff(LED_BLUE);
 						Sdmounted = 0;
 						fileNum +=1;
-						Delayms(1000);
+						Delayms(500);
 						
 						/* Clear interrupt flag */
 						EXTI_ClearITPendingBit(EXTI_Line0);
@@ -124,7 +126,7 @@ void TM_EXTI_Handler(uint16_t GPIO_Pin)
 								// Mounted OK, turn on RED LED 
 								LedOn(LED_BLUE);
 								f_open(&fil,filename, FA_CREATE_ALWAYS | FA_READ | FA_WRITE);
-								Delayms(1000);
+								Delayms(500);
 								
 								/* Clear interrupt flag */
 								EXTI_ClearITPendingBit(EXTI_Line0);

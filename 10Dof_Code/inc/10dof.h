@@ -39,8 +39,6 @@ uint8_t Gyro_init(I2C_TypeDef* I2Cx);
  */
 uint8_t Compass_init(I2C_TypeDef* I2Cx); 
 
-
-
 /*
  * @brief  Read back register values from accelerometer
  * @param  *I2Cx: I2C used
@@ -50,7 +48,7 @@ uint8_t Compass_init(I2C_TypeDef* I2Cx);
 void ADXL345_data(I2C_TypeDef* I2Cx, int16_t* data); 
 
 /*
- * @brief  Read back register values from gyroscope
+ * @brief  Read back register values from gyroscope and scale the values accordingly
  * @param  *I2Cx: I2C used
  * @param  *data: pointer to data array to store data from gyroscope. The array is three elements long.
  * @note   The values stored in data are floats so that the data returned by the the device is in radains per second
@@ -58,6 +56,15 @@ void ADXL345_data(I2C_TypeDef* I2Cx, int16_t* data);
  */
 void Gyro_data(I2C_TypeDef* I2Cx, float* data); //This function will return the Gyroscope data
 
+/*
+ * @brief  Read back register values from gyroscope and don't scale
+ * @param  *I2Cx: I2C used
+ * @param  *data: pointer to data array to store data from gyroscope. The array is three elements long.
+ * @note   The values stored in data array is the raw data returned by the gyroscope in degrees per second
+ * @retval None
+ */
+void Gyro_data_raw(I2C_TypeDef* I2Cx, int16_t* gyro_data);
+	
 /*
  * @brief  Read back register values from magnetometer
  * @param  *I2Cx: I2C used

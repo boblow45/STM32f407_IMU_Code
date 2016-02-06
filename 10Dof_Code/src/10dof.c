@@ -72,9 +72,23 @@ void Gyro_data(I2C_TypeDef* I2Cx, float* angle_rate)
 	}
 	for(i = 0; i < 3; i++)
 	{
-		angle_rate[i] = gyro_data[i] / PI;
+		angle_rate[i] = gyro_data[i] * PI /180;
 	}
+}
 
+
+//returns the none scaled values retuned from the gyroscope
+void Gyro_data_raw(I2C_TypeDef* I2Cx, int16_t* gyro_data)
+{
+	uint8_t i,j = 0;
+	uint8_t raw_data[6];
+	
+	I2C_Read_Multi_Reg(I2Cx, L3G4200D, 0xA8, raw_data, 6);
+	for (i = 0 ; i <8; i += 2)
+	{
+		convert_2_sgn( &raw_data[i+1], &raw_data[i], &gyro_data[j]);
+		j++;
+	}
 }
 
 // Compass Functions for the  HMC5883L 3-Axis Digital Compass
