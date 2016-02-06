@@ -4,6 +4,10 @@ const float  PI = 3.14159265358979;
 
 
 #ifdef SDCARD
+/////////////////////////////
+//		Global Varibles			//
+////////////////////////////
+
 /* Fatfs object */
 FATFS FatFs;
 /* File object */
@@ -16,19 +20,12 @@ uint8_t Sdmounted = 1;
 
 /* Used as a bufer when converting accelerometer data to string*/
 char buffer[40];
-char prefix[] = "0:acc_data";
-char suffix[] = ".txt";
-char file_name [20];
+char filename[20];
 uint8_t fileNum = 0;
-
 #endif
 
 int main(void) 
 	{
-/////////////////////////////
-//		Global Varibles			//
-////////////////////////////
-
 		uint32_t DelayFreq = 50; 	// This delay is set from the wanted/requied delay time of 20e-3 seconds
 		uint32_t PastCountVal;		// Stores the counter value at the start of each while loop. Used for preciese timeing
 		int16_t acc_data[3];
@@ -49,7 +46,7 @@ int main(void)
 		if(gyro_id == 0xD3)LedOn(LED_GREEN);
 		if(Compass_id == 0x48)LedOn(LED_ORANGE);
 		
-		//InitializeTimer(&ConstantDelayStruct, DelayFreq);
+		InitializeTimer(&ConstantDelayStruct, DelayFreq);
 		
 		//used to enable print to console. The following line of code enables the used of print to console 
 		#ifdef SWOPRINT
@@ -57,27 +54,34 @@ int main(void)
 		#endif
 		
 		#ifdef SDCARD
+			sprintf(filename,"0:acc_data%d.txt",fileNum);
+			
 			// Add an exterinal interupt on pin A0 so as to close the file and unmount the SD card
 			TM_EXTI_Attach(GPIOA, GPIO_Pin_0, TM_EXTI_Trigger_Rising);	
+			
+			/* Initialize delay */
+			TM_DELAY_Init();
+			
 			/* Mount drive */
-			if (f_mount(&FatFs, "0:acc_data.txt", 1) == FR_OK) 
+			if (f_mount(&FatFs, filename, 1) == FR_OK) 
 				{
 					/* Mounted OK, turn on RED LED */
 					LedOn(LED_BLUE);
 					
-
-					f_open(&fil,"0:acc_data.txt", FA_CREATE_ALWAYS | FA_READ | FA_WRITE);
+					
+					f_open(&fil,filename, FA_CREATE_ALWAYS | FA_READ | FA_WRITE);
 				}
 		#endif
 				
 		while (1) 
 			{	
-				//PastCountVal = TIM_GetCounter(TIM2);
+				PastCountVal = TIM_GetCounter(TIM2);
 				ADXL345_data(I2C1, acc_data);
 
 				#ifdef SWOPRINT
-				TM_SWO_Printf("Roll has a value of: %f\n", angles[0]);
-				TM_SWO_Printf("Pitch has a value of: %f\n\n", angles[1]);
+				TM_SWO_Printf("x-axis value is:  %d\n", acc_data[0]);
+				TM_SWO_Printf("y-axis value is:  %d\n", acc_data[1]);
+				TM_SWO_Printf("z-axis value is:  %d\n", acc_data[2]);
 				#endif
 				
 				#ifdef SDCARD
@@ -87,10 +91,9 @@ int main(void)
 						f_puts(buffer, &fil);
 					}
 				#endif
-				//EnsureSetRuntime(&ConstantDelayStruct,PastCountVal, DelayFreq);
+				EnsureSetRuntime(&ConstantDelayStruct,PastCountVal, DelayFreq);
 			}
 }
-
 
 
 
@@ -98,25 +101,35 @@ int main(void)
 void TM_EXTI_Handler(uint16_t GPIO_Pin) 
 	{
 		/* Handle external line 0 interrupts */
-		if (GPIO_Pin == GPIO_Pin_0) 
-			{	
-				
-					f_close(&fil);
-					f_mount(0, "0:", 1);
-					LedOff(LED_BLUE);
-					Sdmounted = 0;
-					fileNum +=1;
-				
-				/*else
-				{	sprintf(file_name,"0:acc_data%d.txt",fileNum);
-					if (f_mount(&FatFs, file_name, 1) == FR_OK) 
-						{
-							// Mounted OK, turn on RED LED 
-							LedOn(LED_BLUE);
-							f_open(&fil,file_name, FA_CREATE_ALWAYS | FA_READ | FA_WRITE);
-						}
+			if (GPIO_Pin == GPIO_Pin_0) 
+				{	
+					if(Sdmounted)
+					{
+						f_close(&fil);
+						f_mount(0, filename, 1);
+						LedOff(LED_BLUE);
+						Sdmounted = 0;
+						fileNum +=1;
+						Delayms(1000);
+						
+						/* Clear interrupt flag */
+						EXTI_ClearITPendingBit(EXTI_Line0);
+					}
+					else
+					{	
+						Sdmounted = 1;
+						sprintf(filename,"0:acc_data%d.txt",fileNum);
+						if (f_mount(&FatFs, filename, 1) == FR_OK) 
+							{
+								// Mounted OK, turn on RED LED 
+								LedOn(LED_BLUE);
+								f_open(&fil,filename, FA_CREATE_ALWAYS | FA_READ | FA_WRITE);
+								Delayms(1000);
+								
+								/* Clear interrupt flag */
+								EXTI_ClearITPendingBit(EXTI_Line0);
+							}
 				}
-				*/
 			}
 		}
 #endif
