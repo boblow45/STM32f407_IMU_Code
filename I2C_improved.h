@@ -311,7 +311,8 @@ uint8_t I2C_ReadAck(I2C_TypeDef* I2Cx);
  * @retval None
  * @note   For private use
  */
-void TM_I2C_WriteData(I2C_TypeDef* I2Cx, uint8_t data);
+void I2C_WriteData(I2C_TypeDef* I2Cx, uint8_t data);
+
 
 /**
  * @}
