@@ -8,6 +8,7 @@
 #include "10dof.h"
 #include "led.h"
 #include "Timer.h"
+#include "I2C_improved.h"
 #include <stdio.h>
 #include <string.h>
 

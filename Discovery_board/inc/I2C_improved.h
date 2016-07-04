@@ -125,7 +125,7 @@ void I2C_StructInit(I2C_InitTypeDef* I2C_InitStruct)
 #define I2C3_OWN_ADDRESS				0x00
 #endif
 #ifndef I2C3_ACK
-#define I2C3_ACK						I2C_Ack_Disable
+#define I2C3_ACK						  I2C_Ack_Disable
 #endif
 #ifndef I2C3_DUTY_CYCLE
 #define I2C3_DUTY_CYCLE				I2C_DutyCycle_2

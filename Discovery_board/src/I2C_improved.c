@@ -113,10 +113,10 @@ void Init_I2C(I2C_TypeDef* I2Cx, I2C_Pinout_t pinout, uint32_t clockSpeed)
 uint8_t I2C_Read(I2C_TypeDef* I2Cx, uint8_t address, uint8_t reg) 
 {
 	uint8_t received_data;
-	I2C_Start(I2Cx, address, I2C_TRANSMITTER_MODE, I2C_ACK_DISABLE);
+	I2C_Start(I2Cx, address << 1, I2C_TRANSMITTER_MODE, I2C_ACK_DISABLE);
 	I2C_WriteData(I2Cx, reg);
 	I2C_Stop(I2Cx);
-	I2C_Start(I2Cx, address, I2C_RECEIVER_MODE, I2C_ACK_DISABLE);
+	I2C_Start(I2Cx, address << 1, I2C_RECEIVER_MODE, I2C_ACK_DISABLE);
 	received_data = I2C_ReadNack(I2Cx);
 	I2C_Stop(I2Cx);
 	return received_data;
@@ -125,10 +125,10 @@ uint8_t I2C_Read(I2C_TypeDef* I2Cx, uint8_t address, uint8_t reg)
 void I2C_ReadMulti(I2C_TypeDef* I2Cx, uint8_t address, uint8_t reg, uint8_t* data, uint16_t count) 
 {
 	uint8_t i;
-	I2C_Start(I2Cx, address, I2C_TRANSMITTER_MODE, I2C_ACK_ENABLE);
+	I2C_Start(I2Cx, address << 1, I2C_TRANSMITTER_MODE, I2C_ACK_ENABLE);
 	I2C_WriteData(I2Cx, reg);
 	I2C_Stop(I2Cx);
-	I2C_Start(I2Cx, address, I2C_RECEIVER_MODE, I2C_ACK_ENABLE);
+	I2C_Start(I2Cx, address << 1, I2C_RECEIVER_MODE, I2C_ACK_ENABLE);
 	for (i = 0; i < count; i++) 
 		{
 		if (i == (count - 1)) 
@@ -147,7 +147,7 @@ void I2C_ReadMulti(I2C_TypeDef* I2Cx, uint8_t address, uint8_t reg, uint8_t* dat
 uint8_t I2C_ReadNoRegister(I2C_TypeDef* I2Cx, uint8_t address) 
 {
 	uint8_t data;
-	I2C_Start(I2Cx, address, I2C_RECEIVER_MODE, I2C_ACK_ENABLE);
+	I2C_Start(I2Cx, address << 1, I2C_RECEIVER_MODE, I2C_ACK_ENABLE);
 	/* Also stop condition happens */
 	data = I2C_ReadNack(I2Cx);
 	I2C_Stop(I2Cx);
@@ -157,7 +157,7 @@ uint8_t I2C_ReadNoRegister(I2C_TypeDef* I2Cx, uint8_t address)
 void I2C_ReadMultiNoRegister(I2C_TypeDef* I2Cx, uint8_t address, uint8_t* data, uint16_t count) 
 {
 	uint8_t i;
-	I2C_Start(I2Cx, address, I2C_RECEIVER_MODE, I2C_ACK_ENABLE);
+	I2C_Start(I2Cx, address << 1, I2C_RECEIVER_MODE, I2C_ACK_ENABLE);
 	for (i = 0; i < count; i++) 
 	{
 		if (i == (count - 1)) 
@@ -179,7 +179,7 @@ void I2C_ReadMultiNoRegister(I2C_TypeDef* I2Cx, uint8_t address, uint8_t* data, 
 
 void I2C_Write(I2C_TypeDef* I2Cx, uint8_t address, uint8_t reg, uint8_t data) 
 	{
-	I2C_Start(I2Cx, address, I2C_TRANSMITTER_MODE, I2C_ACK_DISABLE);
+	I2C_Start(I2Cx, address << 1, I2C_TRANSMITTER_MODE, I2C_ACK_DISABLE);
 	I2C_WriteData(I2Cx, reg);
 	I2C_WriteData(I2Cx, data);
 	I2C_Stop(I2Cx);
@@ -188,7 +188,7 @@ void I2C_Write(I2C_TypeDef* I2Cx, uint8_t address, uint8_t reg, uint8_t data)
 void I2C_WriteMulti(I2C_TypeDef* I2Cx, uint8_t address, uint8_t reg, uint8_t* data, uint16_t count) 
 {
 	uint8_t i;
-	I2C_Start(I2Cx, address, I2C_TRANSMITTER_MODE, I2C_ACK_DISABLE);
+	I2C_Start(I2Cx, address << 1, I2C_TRANSMITTER_MODE, I2C_ACK_DISABLE);
 	I2C_WriteData(I2Cx, reg);
 	for (i = 0; i < count; i++) 
 	{
@@ -199,15 +199,15 @@ void I2C_WriteMulti(I2C_TypeDef* I2Cx, uint8_t address, uint8_t reg, uint8_t* da
 
 void I2C_WriteNoRegister(I2C_TypeDef* I2Cx, uint8_t address, uint8_t data) 
 {
-	I2C_Start(I2Cx, address, I2C_TRANSMITTER_MODE, I2C_ACK_DISABLE);
+	I2C_Start(I2Cx, address << 1, I2C_TRANSMITTER_MODE, I2C_ACK_DISABLE);
 	I2C_WriteData(I2Cx, data);
 	I2C_Stop(I2Cx);
 }
 
-void I2C_WriteMultiNoRegister(I2C_TypeDef* I2Cx, uint8_t address, uint8_t* data, uint16_t count) 
+void I2C_WriteMultiNoRegister(I2C_TypeDef* I2Cx, uint8_t address , uint8_t* data, uint16_t count) 
 {
 	uint8_t i;
-	I2C_Start(I2Cx, address, I2C_TRANSMITTER_MODE, I2C_ACK_DISABLE);
+	I2C_Start(I2Cx, address << 1, I2C_TRANSMITTER_MODE, I2C_ACK_DISABLE);
 	for (i = 0; i < count; i++) 
 		{
 		I2C_WriteData(I2Cx, data[i]);
@@ -386,11 +386,22 @@ void I2C1_INT_InitPins(I2C_Pinout_t pinout)
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);  // enable clock for SCL and SDA pins
 		
 	if (pinout == I2C_Pinout_1) 
-		{I2C_GPIO_INIT(GPIOB, GPIO_Pin_6, GPIO_Pin_7);}
+		{
+			I2C_GPIO_INIT(GPIOB, GPIO_Pin_6, GPIO_Pin_7);
+				// Connect I2C1 pins to AF
+			GPIO_PinAFConfig(GPIOB, GPIO_PinSource6, GPIO_AF_I2C1);	// SCL
+			GPIO_PinAFConfig(GPIOB, GPIO_PinSource7, GPIO_AF_I2C1); // SDA
+		}
 	if (pinout == I2C_Pinout_2) 
-		{I2C_GPIO_INIT(GPIOB, GPIO_Pin_8, GPIO_Pin_9);}
+		{I2C_GPIO_INIT(GPIOB, GPIO_Pin_8, GPIO_Pin_9);
+		 GPIO_PinAFConfig(GPIOB, GPIO_PinSource8, GPIO_AF_I2C1);	// SCL
+		 GPIO_PinAFConfig(GPIOB, GPIO_PinSource9, GPIO_AF_I2C1);  // SDA
+		} 
 	if (pinout == I2C_Pinout_3) 
-		{I2C_GPIO_INIT(GPIOB, GPIO_Pin_6, GPIO_Pin_9);}
+		{I2C_GPIO_INIT(GPIOB, GPIO_Pin_6, GPIO_Pin_9);
+		 GPIO_PinAFConfig(GPIOB, GPIO_PinSource6, GPIO_AF_I2C1);	// SCL
+		 GPIO_PinAFConfig(GPIOB, GPIO_PinSource9, GPIO_AF_I2C1);  // SDA
+		}
 }
 
 void I2C2_INT_InitPins(I2C_Pinout_t pinout) 
@@ -401,18 +412,24 @@ void I2C2_INT_InitPins(I2C_Pinout_t pinout)
 			RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C2, ENABLE);   // enable APB1 peripheral clock for I2C2
 			RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);  // enable clock for SCL and SDA pins
 			I2C_GPIO_INIT(GPIOB, GPIO_Pin_10, GPIO_Pin_11);
+			GPIO_PinAFConfig(GPIOB, GPIO_PinSource10, GPIO_AF_I2C2);	// SCL
+		  GPIO_PinAFConfig(GPIOB, GPIO_PinSource11, GPIO_AF_I2C2);  // SDA
 			}
 	if (pinout == I2C_Pinout_2) 
 		{
 		RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C2, ENABLE);   // enable APB1 peripheral clock for I2C2
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);  // enable clock for SCL and SDA pins
 		I2C_GPIO_INIT(GPIOF, GPIO_Pin_1, GPIO_Pin_0);
+		GPIO_PinAFConfig(GPIOF, GPIO_PinSource1, GPIO_AF_I2C2);	 // SCL
+		GPIO_PinAFConfig(GPIOF, GPIO_PinSource0, GPIO_AF_I2C2);  // SDA	
 		}
 	if (pinout == I2C_Pinout_3) 
 		{
 		RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C2, ENABLE);   // enable APB1 peripheral clock for I2C2
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOH, ENABLE);  // enable clock for SCL and SDA pins
 		I2C_GPIO_INIT(GPIOH, GPIO_Pin_4, GPIO_Pin_5);
+		GPIO_PinAFConfig(GPIOH, GPIO_PinSource4, GPIO_AF_I2C2);	 // SCL
+		GPIO_PinAFConfig(GPIOH, GPIO_PinSource5, GPIO_AF_I2C2);  // SDA	
 		}
 }
 
@@ -422,25 +439,32 @@ void I2C3_INT_InitPins(I2C_Pinout_t pinout)
 	if (pinout == I2C_Pinout_1) 
 		{
 		GPIO_InitTypeDef GPIO_InitStruct;
-		GPIO_InitStruct.GPIO_Pin = GPIO_Pin_8; 					// Need to use PA8 as SCL
-		GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;				// set pins to alternate function
-		GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;	// set GPIO speed
-		GPIO_InitStruct.GPIO_OType = GPIO_OType_OD;			// set output to open drain --> the line has to be only pulled low, not driven high
-		GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;				// enable pull up resistors
-		GPIO_Init(GPIOA, &GPIO_InitStruct);							// init GPIOA
+		GPIO_InitStruct.GPIO_Pin = GPIO_Pin_8; 										// Need to use PA8 as SCL
+		GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;									// set pins to alternate function
+		GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;						// set GPIO speed
+		GPIO_InitStruct.GPIO_OType = GPIO_OType_OD;								// set output to open drain --> the line has to be only pulled low, not driven high
+		GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;									// enable pull up resistors
+		GPIO_Init(GPIOA, &GPIO_InitStruct);												// init GPIOA
 
-		GPIO_InitStruct.GPIO_Pin = GPIO_Pin_9; 					// Need to use PC9 as SDA
-		GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;				// set pins to alternate function
-		GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;	// set GPIO speed
-		GPIO_InitStruct.GPIO_OType = GPIO_OType_OD;			// set output to open drain --> the line has to be only pulled low, not driven high
-		GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;				// enable pull up resistors
-		GPIO_Init(GPIOC, &GPIO_InitStruct);							// init GPIOC
+		GPIO_InitStruct.GPIO_Pin = GPIO_Pin_9; 										// Need to use PC9 as SDA
+		GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;									// set pins to alternate function
+		GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;						// set GPIO speed
+		GPIO_InitStruct.GPIO_OType = GPIO_OType_OD;								// set output to open drain --> the line has to be only pulled low, not driven high
+		GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;									// enable pull up resistors
+		GPIO_Init(GPIOC, &GPIO_InitStruct);												// init GPIOC
+		
+		GPIO_PinAFConfig(GPIOA, GPIO_PinSource8, GPIO_AF_I2C3);	 	  // SCL
+		GPIO_PinAFConfig(GPIOC, GPIO_PinSource9, GPIO_AF_I2C3);  	  // SDA		
+			
 		}
 	if (pinout == I2C_Pinout_2) 
 		{
 		RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C3, ENABLE);   // enable APB1 peripheral clock for I2C2
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOH, ENABLE);  // enable clock for SCL and SDA pins
-		I2C_GPIO_INIT(GPIOF, GPIO_Pin_7, GPIO_Pin_8);	  }
+		I2C_GPIO_INIT(GPIOF, GPIO_Pin_7, GPIO_Pin_8);	  
+		GPIO_PinAFConfig(GPIOF, GPIO_PinSource7, GPIO_AF_I2C3);	 // SCL
+		GPIO_PinAFConfig(GPIOF, GPIO_PinSource8, GPIO_AF_I2C3);  // SDA	
+		}
 }
 
 void I2C_GPIO_INIT(GPIO_TypeDef* GPIOx, uint16_t SCL, uint16_t SDA)
@@ -452,6 +476,8 @@ void I2C_GPIO_INIT(GPIO_TypeDef* GPIOx, uint16_t SCL, uint16_t SDA)
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_OD;			// set output to open drain --> the line has to be only pulled low, not driven high
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;				// enable pull up resistors
 	GPIO_Init(GPIOx, &GPIO_InitStruct);							// init GPIOx
+	
+
 }
 	
 	//void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct);
