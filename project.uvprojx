@@ -626,14 +626,14 @@
               <FilePath>.\Discovery_board\inc\Timer.h</FilePath>
             </File>
             <File>
-              <FileName>I2C_improved.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Discovery_board\src\I2C_improved.c</FilePath>
-            </File>
-            <File>
               <FileName>I2C_improved.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Discovery_board\inc\I2C_improved.h</FilePath>
+            </File>
+            <File>
+              <FileName>I2C_improved.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Discovery_board\src\I2C_improved.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1313,14 +1313,14 @@
               <FilePath>.\Discovery_board\inc\Timer.h</FilePath>
             </File>
             <File>
-              <FileName>I2C_improved.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Discovery_board\src\I2C_improved.c</FilePath>
-            </File>
-            <File>
               <FileName>I2C_improved.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Discovery_board\inc\I2C_improved.h</FilePath>
+            </File>
+            <File>
+              <FileName>I2C_improved.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Discovery_board\src\I2C_improved.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2000,14 +2000,14 @@
               <FilePath>.\Discovery_board\inc\Timer.h</FilePath>
             </File>
             <File>
-              <FileName>I2C_improved.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Discovery_board\src\I2C_improved.c</FilePath>
-            </File>
-            <File>
               <FileName>I2C_improved.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Discovery_board\inc\I2C_improved.h</FilePath>
+            </File>
+            <File>
+              <FileName>I2C_improved.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Discovery_board\src\I2C_improved.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2687,14 +2687,14 @@
               <FilePath>.\Discovery_board\inc\Timer.h</FilePath>
             </File>
             <File>
-              <FileName>I2C_improved.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Discovery_board\src\I2C_improved.c</FilePath>
-            </File>
-            <File>
               <FileName>I2C_improved.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Discovery_board\inc\I2C_improved.h</FilePath>
+            </File>
+            <File>
+              <FileName>I2C_improved.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Discovery_board\src\I2C_improved.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -3374,14 +3374,14 @@
               <FilePath>.\Discovery_board\inc\Timer.h</FilePath>
             </File>
             <File>
-              <FileName>I2C_improved.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Discovery_board\src\I2C_improved.c</FilePath>
-            </File>
-            <File>
               <FileName>I2C_improved.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Discovery_board\inc\I2C_improved.h</FilePath>
+            </File>
+            <File>
+              <FileName>I2C_improved.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Discovery_board\src\I2C_improved.c</FilePath>
             </File>
           </Files>
         </Group>

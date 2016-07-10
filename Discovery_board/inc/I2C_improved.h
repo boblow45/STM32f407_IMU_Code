@@ -149,11 +149,12 @@ void I2C_StructInit(I2C_InitTypeDef* I2C_InitStruct)
 /**
  * @brief  I2C Pinout enumeration
  */
-typedef enum {
-	I2C_Pinout_1,      /*!< Use Pinout1 from Pinout table for I2Cx */
-	I2C_Pinout_2,      /*!< Use Pinout2 from Pinout table for I2Cx */
-	I2C_Pinout_3,      /*!< Use Pinout3 from Pinout table for I2Cx */
-} I2C_Pinout_t;
+typedef enum 
+	{
+		I2C_Pinout_1,      /*!< Use Pinout1 from Pinout table for I2Cx */
+		I2C_Pinout_2,      /*!< Use Pinout2 from Pinout table for I2Cx */
+		I2C_Pinout_3,      /*!< Use Pinout3 from Pinout table for I2Cx */
+	} 	I2C_Pinout_t;
 
 /**
  * @}
